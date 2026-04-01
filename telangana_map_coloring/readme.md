@@ -12,7 +12,7 @@ This code applies the **Map Coloring Problem** to all 33 districts of Telangana 
 
 - **Variables** → These are the 33 districts of Telangana  
 - **Domains** → The colors we can use:  
-  `["Red", "Green", "Blue", "Yellow"]`  
+  ["Red", "Green", "Blue", "Yellow"] 
 - **Constraints** → A list that tells which districts are neighbors  
 
 This constraints list basically represents the map.  
