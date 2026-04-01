@@ -2,7 +2,7 @@
 
 This code applies the **Map Coloring Problem** to all 33 districts of Telangana using a backtracking approach.
 
- The main objcetive is to assign a color to each district such that **no two neighboring districts share the same color**.
+ The main objective is to assign a color to each district such that **no two neighboring districts share the same color**.
 
 ---
 
@@ -27,7 +27,6 @@ Before giving a color to any district, the code checks if it’s valid.
 
 So, a district only gets a color if it doesn’t clash with its neighbors.
 
----
 
 ###  3. Trying all possibilities (Backtracking)
 
@@ -44,5 +43,16 @@ When that happens:
 - Changes the color it chose earlier  
 - Then tries again with a different option  
 
-This “go back and try again” process is called **backtracking**.
+This process is called **backtracking**.
+
+This process continues until all states are assigned valid colors without conflicts.
+
+------
+
+###  Final output
+
+Once a solution is found:
+- The districts are sorted alphabetically  
+- Each district is displayed with its assigned color .
+
 
