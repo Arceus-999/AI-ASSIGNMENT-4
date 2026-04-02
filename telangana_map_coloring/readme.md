@@ -1,58 +1,41 @@
-## Telangana District Map Coloring Solver (CSP)
+# Telangana Map Coloring
 
-This code applies the **Map Coloring Problem** to all 33 districts of Telangana using a backtracking approach.
+This code is about **Map Coloring Problem** for the 33 districts of Telangana using **(CSP)** approach. The objective is to assign colors to each district such that no two neighboring districts have the same color.
 
- The main objective is to assign a color to each district such that **no two neighboring districts share the same color**.
+The code automatically:
+
+* Reads district boundaries from a .kml file
+* Identifies neighboring districts using spatial relationships
+* Applies a the CSP algorithm
+* displays the colored map using Matplotlib
+
+
+#### How it works:
+
+### 1. Data Loading 
+
+The program begins by loading the telangana.kml file into a Geodataframe using Geopandas. 
+
+
+### 2. Adjacency List
+
+Using geometric operations, the code determines which districts share boundaries. For each district, it identifies neighboring districts by checking if their geometries touch.This information is stored as an adjacency list.
+
+
+### 3. CSP Logic
+
+The logic is applying backtracking CSP algorithm to assign colors to districts. The algorithm ensures that no two adjacent districts are assigned the same color. It also uses a heuristic to improve efficiency and reduce the search space.
+
+
+
+### 4. Final Step
+
+Once a valid coloring is found, the assigned colors are mapped back to the GeoDataFrame. The program then visualizes the colored districts using Matplotlib, adding labels at the centroid of each district and displaying the final map.
 
 ---
 
-##  How the Code Works
+## Output
 
-###  1. Understanding the problem
-
-- **Variables** → These are the 33 districts of Telangana  
-- **Domains** → The colors we can use:  
-  ["Red", "Green", "Blue", "Yellow"] 
-- **Constraints** → A list that tells which districts are neighbors  
-
-This constraints list basically represents the map.  
-For example, the code knows that **Hyderabad** is surrounded by **Rangareddy** and **Medchal-Malkajgiri**, so they shouldn’t have the same color.
-
-
-###  2. Checking if a color is allowed
-
-Before giving a color to any district, the code checks if it’s valid.
-
-- It looks at all the neighboring districts  and if any neighbor already has the same color, it rejects that choice  
-
-So, a district only gets a color if it doesn’t clash with its neighbors.
-
-
-###  3. Trying all possibilities (Backtracking)
-
-This is the main part of the logic.
-
-- The code picks a district  
-- Tries giving it a color  
-- If it works, it moves to the next district  
-
-But sometimes, no color works for a district.
-
-When that happens:
-- It goes back to the previous district  
-- Changes the color it chose earlier  
-- Then tries again with a different option  
-
-This process is called **backtracking**.
-
-This process continues until all states are assigned valid colors without conflicts.
-
-------
-
-###  Final output
-
-Once a solution is found:
-- The districts are sorted alphabetically  
-- Each district is displayed with its assigned color .
-
-
+* A colored map of Telangana districts
+* No two adjacent districts share the same color
+* Labels displayed clearly on the map
