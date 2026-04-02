@@ -26,11 +26,12 @@ Using geometric operations, the code determines which districts share boundaries
 
 The logic is applying backtracking CSP algorithm to assign colors to districts. The algorithm ensures that no two adjacent districts are assigned the same color. It also uses a heuristic to improve efficiency and reduce the search space.
 
+This process continues until all states are assigned valid colors without conflicts.
 
 
 ### 4. Final Step
 
-Once a valid coloring is found, the assigned colors are mapped back to the GeoDataFrame. The program then visualizes the colored districts using Matplotlib, adding labels at the centroid of each district and displaying the final map.
+Once a valid coloring is found, the assigned colors are mapped back to the GeoDataFrame. The program then displys the colored districts using Matplotlib, adding labels at the centre of each district.
 
 ---
 
